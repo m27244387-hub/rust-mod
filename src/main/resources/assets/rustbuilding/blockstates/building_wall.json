@@ -1,19 +1,104 @@
 {
   "variants": {
-    "tier=0": {
-      "model": "rustbuilding:block/building_wall_tier_0"
+    "facing=north,tier=0": {
+      "model": "rustbuilding:block/building_wall_tier_0",
+      "y": 0,
+      "uvlock": true
     },
-    "tier=1": {
-      "model": "rustbuilding:block/building_wall_tier_1"
+    "facing=north,tier=1": {
+      "model": "rustbuilding:block/building_wall_tier_1",
+      "y": 0,
+      "uvlock": true
     },
-    "tier=2": {
-      "model": "rustbuilding:block/building_wall_tier_2"
+    "facing=north,tier=2": {
+      "model": "rustbuilding:block/building_wall_tier_2",
+      "y": 0,
+      "uvlock": true
     },
-    "tier=3": {
-      "model": "rustbuilding:block/building_wall_tier_3"
+    "facing=north,tier=3": {
+      "model": "rustbuilding:block/building_wall_tier_3",
+      "y": 0,
+      "uvlock": true
     },
-    "tier=4": {
-      "model": "rustbuilding:block/building_wall_tier_4"
+    "facing=north,tier=4": {
+      "model": "rustbuilding:block/building_wall_tier_4",
+      "y": 0,
+      "uvlock": true
+    },
+    "facing=east,tier=0": {
+      "model": "rustbuilding:block/building_wall_tier_0",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,tier=1": {
+      "model": "rustbuilding:block/building_wall_tier_1",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,tier=2": {
+      "model": "rustbuilding:block/building_wall_tier_2",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,tier=3": {
+      "model": "rustbuilding:block/building_wall_tier_3",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,tier=4": {
+      "model": "rustbuilding:block/building_wall_tier_4",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,tier=0": {
+      "model": "rustbuilding:block/building_wall_tier_0",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,tier=1": {
+      "model": "rustbuilding:block/building_wall_tier_1",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,tier=2": {
+      "model": "rustbuilding:block/building_wall_tier_2",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,tier=3": {
+      "model": "rustbuilding:block/building_wall_tier_3",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,tier=4": {
+      "model": "rustbuilding:block/building_wall_tier_4",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,tier=0": {
+      "model": "rustbuilding:block/building_wall_tier_0",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,tier=1": {
+      "model": "rustbuilding:block/building_wall_tier_1",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,tier=2": {
+      "model": "rustbuilding:block/building_wall_tier_2",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,tier=3": {
+      "model": "rustbuilding:block/building_wall_tier_3",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,tier=4": {
+      "model": "rustbuilding:block/building_wall_tier_4",
+      "y": 270,
+      "uvlock": true
     }
   }
 }

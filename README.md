@@ -1,43 +1,35 @@
-# Rust Building System — MVP 0.1.0
+# Rust Building System — 0.3.0
 
-Minecraft Java 1.20.1 / Forge 47.2.0 / Java 17.
+Minecraft Java Edition 1.20.1 · Forge 47.2.0 · Java 17
 
-## What is implemented
-- Forge mod entry point and deferred registries.
-- Building Plan item: server-side right-click placement of a basic wall; if the target has air below, it places a twig foundation.
-- Building Hammer item: right-click a registered building piece to advance its `tier` blockstate from Twig to Armored.
-- Four initial building blocks: twig foundation, wall, floor, roof.
-- Resource/model/lang JSON templates and a Gradle Forge build.
+## 0.3.0 — анимации предметов от первого лица
 
-## Important MVP limitations
-This is the first compiling-oriented scaffold, not yet a complete Rust clone:
-- Tier changes are currently free; resource costs are not wired.
-- HP, Tool Cupboard ownership/authorization, upkeep, stability graph, raid damage, doors and code locks are not implemented yet.
-- Placement currently uses a simple adjacent-block placement rather than a full Rust grid/radial menu.
-- Models are vanilla-style placeholder models. Replace the placeholder textures with original Rust-inspired art before release.
+Добавлен клиентский hand-transform через `IClientItemExtensions.applyForgeHandTransform`:
 
-## Build
-1. Install a 64-bit JDK 17.
-2. Open this folder in IntelliJ IDEA or run Gradle from a terminal.
-3. On first setup, generate the Gradle wrapper if needed: `gradle wrapper --gradle-version 8.1.1`.
-4. Run `./gradlew genIntellijRuns` (optional for IntelliJ) and `./gradlew build`.
-5. The mod jar is produced in `build/libs/`.
+- **Building Plan:** положение перед игроком, лёгкое покачивание/наклон как у развернутого чертежа, анимация поднятия при экипировке и короткий импульс при взмахе/установке.
+- **Building Hammer:** положение готовности к удару, небольшое idle-покачивание, плавная фаза замаха и удара, а также анимация экипировки.
+- Движение синхронизируется с `swingProcess` и `equipProcess` Minecraft, поэтому не использует отдельные таймеры и не требует дополнительных модов.
 
-On Windows use `gradlew.bat build`.
+### Ограничения этой версии анимаций
+Это анимации трансформации предмета в руке от первого лица. Геометрия самого чертежа пока не раскрывается по отдельным костям, а анимация третьего лица и полноценная анимация размещения ghost-preview ещё не реализованы. Для скелетной анимации модели потребуется отдельный animated renderer/модельный пайплайн.
 
-## Test
-Run `./gradlew runClient`, create a creative world, and obtain:
-- `/give @p rustbuilding:building_plan`
-- `/give @p rustbuilding:building_hammer`
-- `/give @p rustbuilding:twig_foundation`
-- `/give @p rustbuilding:building_wall`
+## Сборка
 
-Use the Building Plan on a block face to place a piece. Use the Hammer on a building piece to cycle its tier.
+Откройте проект в IntelliJ IDEA с Java 17 и выполните задачу Gradle `build`.
+Либо из корня проекта (если установлен Gradle):
 
-## Next milestones
-1. Proper placement preview, piece selector, grid snapping and rotation.
-2. Per-piece HP and damage persistence.
-3. Tool Cupboard, UUID authorization and building privilege.
-4. Stability graph and collapse propagation.
-5. Upkeep/decay scheduler.
-6. Explosives, damage profiles, doors and code locks.
+```bash
+gradle build
+```
+
+Готовый jar появится в `build/libs/`.
+
+## Выдача предметов
+
+```mcfunction
+/give @p rustbuilding:building_plan
+/give @p rustbuilding:building_hammer
+```
+
+## Известные ограничения
+Это экспериментальная версия мода. В ней ещё нет полного Rust building placement, 3D ghost preview, радиального меню, Tool Cupboard, upkeep, stability graph, дверей/code lock и полноценной системы рейдов.
