@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rustbuilding:block/building_floor_tier_4"
+  }
+}
